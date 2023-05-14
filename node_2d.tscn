@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxxjxsm48fpd5"]
+
+[ext_resource type="Texture2D" uid="uid://dhec2na2ugupj" path="res://assets/grass_tile_001.png" id="1_7p6ym"]
+[ext_resource type="Script" path="res://src/IsoMap.gd" id="2_axe0c"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_croc0"]
+texture = ExtResource("1_7p6ym")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_k5gi2"]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(32, 16)
+sources/0 = SubResource("TileSetAtlasSource_croc0")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_k5gi2")
+format = 2
+layer_0/tile_data = PackedInt32Array(65536, 0, 0, 0, 0, 0, 131073, 0, 0, 131074, 0, 0, 65537, 0, 0, 65538, 0, 0, 1, 0, 0, 2, 0, 0, 131072, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 131075, 0, 0, 65539, 0, 0, 3, 0, 0, -65533, 0, 0, -65534, 0, 0, -65535, 0, 0, -65536, 0, 0, 196612, 0, 0, 131076, 0, 0, 65540, 0, 0, 4, 0, 0, -65532, 0, 0, -131068, 0, 0, -131069, 0, 0, -131070, 0, 0, -131071, 0, 0, -131072, 0, 0, -65537, 0, 0, -1, 0, 0, 65535, 0, 0, 131071, 0, 0, 196607, 0, 0, 262143, 0, 0, 262142, 0, 0, 196606, 0, 0, 131069, 0, 0, 131070, 0, 0, 196605, 0, 0, 262141, 0, 0, 65534, 0, 0, -2, 0, 0, -65538, 0, 0, 65533, 0, 0, -3, 0, 0, -65539, 0, 0)
+script = ExtResource("2_axe0c")
