@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://cxxjxsm48fpd5"]
+
+[ext_resource type="Texture2D" uid="uid://dhec2na2ugupj" path="res://assets/grass_tile_001.png" id="1_ow52a"]
+[ext_resource type="Texture2D" uid="uid://b71qk3yq38pwu" path="res://assets/stone_tile_002.png" id="2_ajcuf"]
+[ext_resource type="Texture2D" uid="uid://bsgj2dvv0d2vx" path="res://assets/character.png" id="3_ryqsj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_croc0"]
+texture = ExtResource("1_ow52a")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_830yr"]
+texture = ExtResource("2_ajcuf")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_k5gi2"]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(32, 20)
+sources/0 = SubResource("TileSetAtlasSource_croc0")
+sources/6 = SubResource("TileSetAtlasSource_830yr")
+
+[sub_resource type="GDScript" id="GDScript_1b5eq"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_k5gi2")
+format = 2
+layer_0/tile_data = PackedInt32Array(65535, 0, 0, 0, 0, 0, -1, 0, 0, -65536, 0, 0, 1, 0, 0, -65535, 0, 0, 65537, 0, 0, 65536, 0, 0, 131071, 0, 0, 2, 0, 0, 65538, 0, 0, -65534, 0, 0, 131074, 6, 0, 65539, 6, 0, 131075, 6, 0, 3, 6, 0, -65533, 6, 0, 131073, 6, 0, 131072, 6, 0, 196607, 6, 0, 196606, 6, 0, 131070, 6, 0, 65534, 6, 0, -2, 6, 0, -65538, 6, 0, -65537, 6, 0, -131072, 6, 0, -131071, 6, 0, -131070, 6, 0, -131069, 6, 0)
+script = SubResource("GDScript_1b5eq")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(0, -16)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_ryqsj")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D/Sprite2D"]
